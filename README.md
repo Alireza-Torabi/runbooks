@@ -43,12 +43,17 @@ production-runbooks/
 │   ├── zabbix/
 │   └── alerting/
 │
+├── infrastructure-management/
+│   └── netbox/
+│       ├── installation/
+│       ├── operations/
+│       ├── backup-recovery/
+│       ├── upgrade/
+│       └── troubleshooting/
+│
 ├── databases/
-│
 ├── backup-recovery/
-│
 ├── security/
-│
 └── disaster-recovery/
 ```
 
