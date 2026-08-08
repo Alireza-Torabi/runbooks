@@ -1,6 +1,6 @@
 # NetBox Upgrade Runbook
 
-> Universal, GitHub-ready runbook for upgrading a native Linux installation of NetBox Community.
+> runbook for upgrading a native Linux installation of NetBox Community.
 >
 > **Scope:** Traditional NetBox deployments installed from a release archive or Git repository, using systemd and an external or local PostgreSQL database. Docker/Kubernetes deployments require a different procedure.
 
