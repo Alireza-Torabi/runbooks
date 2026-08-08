@@ -1,7 +1,7 @@
 <h1 dir="rtl" align="right">Runbook عمومی ارتقای NetBox</h1>
 
 <p dir="rtl" align="right">
-این سند یک Runbook عمومی و مناسب GitHub برای ارتقای NetBox Community در نصب‌های Native Linux است. هیچ IP، hostname، رمز عبور، نام Plugin اختصاصی یا نسخهٔ ثابت مربوط به یک محیط خاص در آن وجود ندارد.
+این سند یک Runbook عمومی برای ارتقای NetBox Community در نصب‌های Native Linux است. هیچ IP، hostname، رمز عبور، نام Plugin اختصاصی یا نسخهٔ ثابت مربوط به یک محیط خاص در آن وجود ندارد.
 </p>
 
 <p dir="rtl" align="right">
