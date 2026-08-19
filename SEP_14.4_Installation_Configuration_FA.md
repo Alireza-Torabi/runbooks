@@ -573,7 +573,7 @@ Enable final Block + Logging
 Deploy to remaining DCs
 ```
 
-## 18. DLP
+## <div dir="rtl">18. DLP</div>
 
 <div dir="rtl" align="right">SEP 14.4 به تنهایی **DLP کامل و Content-aware** نیست.</div>
 
