@@ -1,4 +1,3 @@
-::: {dir="rtl" align="right"}
 # <span dir="rtl">راهنمای نصب و پیکربندی Symantec Endpoint Protection 14.4</span>
 
 ## <span dir="rtl">1. هدف و معماری</span>
