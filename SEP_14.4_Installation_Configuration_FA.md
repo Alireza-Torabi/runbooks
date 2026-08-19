@@ -1,6 +1,6 @@
-# <span dir="rtl" align="right">راهنمای نصب و پیکربندی Symantec Endpoint Protection 14.4</span>
+# <div dir="rtl" align="right">راهنمای نصب و پیکربندی Symantec Endpoint Protection 14.4</div>
 
-## <span dir="rtl">1. هدف و معماری</span>
+## <div dir="rtl">1. هدف و معماری</div>
 
 <div dir="rtl" align="right">این راهنما برای پیاده‌سازی **Symantec Endpoint Protection Manager (SEPM)</div>
 <div dir="rtl" align="right">14.4** و کلاینت‌های **SEP 14.4** در یک شبکه سازمانی تهیه شده است. موضوعات</div>
