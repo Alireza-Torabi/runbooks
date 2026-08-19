@@ -1,87 +1,19 @@
 ::: {dir="rtl" align="right"}
-```{=html}
-<h1 dir="rtl" align="right">
-```
-راهنمای نصب و پیکربندی Symantec Endpoint Protection 14.4
-```{=html}
-</h1>
-```
-```{=html}
-<h2 dir="rtl" align="right">
-```
-1.  هدف و معماری
-    ```{=html}
-    </h2>
-    ```
+# <span dir="rtl">راهنمای نصب و پیکربندی Symantec Endpoint Protection 14.4</span>
 
-::: {dir="rtl" align="right"}
-این راهنما برای پیاده‌سازی \*\*Symantec Endpoint Protection Manager
-(SEPM)
-:::
+## <span dir="rtl">1. هدف و معماری</span>
 
-::: {dir="rtl" align="right"}
-14.4\*\* و کلاینت‌های **SEP 14.4** در یک شبکه سازمانی تهیه شده است.
-موضوعات
-:::
+<div dir="rtl" align="right">این راهنما برای پیاده‌سازی **Symantec Endpoint Protection Manager (SEPM)</div>
+<div dir="rtl" align="right">14.4** و کلاینت‌های **SEP 14.4** در یک شبکه سازمانی تهیه شده است. موضوعات</div>
+<div dir="rtl" align="right">اصلی شامل نصب Windows و Linux، مهاجرت از Kaspersky، توزیع متمرکز،</div>
+<div dir="rtl" align="right">LiveUpdate، Policyهای Workstation/Server/Domain Controller و عیب‌یابی</div>
+<div dir="rtl" align="right">Remote Deployment است.</div>
 
-::: {dir="rtl" align="right"}
-اصلی شامل نصب Windows و Linux، مهاجرت از Kaspersky، توزیع متمرکز،
-:::
+> <span dir="rtl">**نکته امنیتی:** رمزهای واقعی، نام‌های کاربری مدیریتی و اطلاعات حساس را</span>
+> <span dir="rtl">داخل اسکریپت‌ها، GPOها یا مستندات Git ذخیره نکنید. در این سند از</span>
+> <span dir="rtl">Placeholder استفاده شده است.</span>
 
-::: {dir="rtl" align="right"}
-LiveUpdate، Policyهای Workstation/Server/Domain Controller و عیب‌یابی
-:::
-
-::: {dir="rtl" align="right"}
-Remote Deployment است.
-:::
-
-```{=html}
-<blockquote dir="rtl">
-```
-```{=html}
-<p dir="rtl" align="right">
-```
-**نکته امنیتی:** رمزهای واقعی، نام‌های کاربری مدیریتی و اطلاعات حساس را
-```{=html}
-</p>
-```
-```{=html}
-</blockquote>
-```
-```{=html}
-<blockquote dir="rtl">
-```
-```{=html}
-<p dir="rtl" align="right">
-```
-داخل اسکریپت‌ها، GPOها یا مستندات Git ذخیره نکنید. در این سند از
-```{=html}
-</p>
-```
-```{=html}
-</blockquote>
-```
-```{=html}
-<blockquote dir="rtl">
-```
-```{=html}
-<p dir="rtl" align="right">
-```
-Placeholder استفاده شده است.
-```{=html}
-</p>
-```
-```{=html}
-</blockquote>
-```
-```{=html}
-<h2 dir="rtl" align="right">
-```
-2.  ساختار پیشنهادی Groupها
-    ```{=html}
-    </h2>
-    ```
+## <span dir="rtl">2. ساختار پیشنهادی Groupها</span>
 
 ``` text
 My Company
@@ -95,25 +27,12 @@ My Company
     └── Pilot-Clients
 ```
 
-::: {dir="rtl" align="right"}
-برای Domain Controller، Database Server، File Server و Application
-:::
+<div dir="rtl" align="right">برای Domain Controller، Database Server، File Server و Application</div>
+<div dir="rtl" align="right">Server از Policy یکسان استفاده نکنید.</div>
 
-::: {dir="rtl" align="right"}
-Server از Policy یکسان استفاده نکنید.
-:::
+## <span dir="rtl">3. Packageهای نصب</span>
 
-```{=html}
-<h2 dir="rtl" align="right">
-```
-3.  Packageهای نصب
-    ```{=html}
-    </h2>
-    ```
-
-::: {dir="rtl" align="right"}
-در SEPM:
-:::
+<div dir="rtl" align="right">در SEPM:</div>
 
 ``` text
 Admin
@@ -121,45 +40,25 @@ Admin
 → Client Install Packages
 ```
 
-::: {dir="rtl" align="right"}
-Package ویندوز 64 بیتی SEP برای Windows Workstation و Windows Server
-:::
+<div dir="rtl" align="right">Package ویندوز 64 بیتی SEP برای Windows Workstation و Windows Server</div>
+<div dir="rtl" align="right">مشترک است. تفاوت اصلی با **Client Install Feature Set**، **Client</div>
+<div dir="rtl" align="right">Install Settings** و Policyهای Group ایجاد می‌شود.</div>
 
-::: {dir="rtl" align="right"}
-مشترک است. تفاوت اصلی با **Client Install Feature Set**، \*\*Client
-:::
-
-::: {dir="rtl" align="right"}
-Install Settings\*\* و Policyهای Group ایجاد می‌شود.
-:::
-
-::: {dir="rtl" align="right"}
-نمونه Package پایه:
-:::
+<div dir="rtl" align="right">نمونه Package پایه:</div>
 
 ``` text
 Symantec Endpoint Protection 14.4 for WIN64BIT
 ```
 
-::: {dir="rtl" align="right"}
-برای Linux از Package مربوط به:
-:::
+<div dir="rtl" align="right">برای Linux از Package مربوط به:</div>
 
 ``` text
 Symantec Agent for Linux 14.4
 ```
 
-::: {dir="rtl" align="right"}
-استفاده می‌شود.
-:::
+<div dir="rtl" align="right">استفاده می‌شود.</div>
 
-```{=html}
-<h2 dir="rtl" align="right">
-```
-4.  Feature Set پیشنهادی
-    ```{=html}
-    </h2>
-    ```
+## <span dir="rtl">4. Feature Set پیشنهادی</span>
 
 ### Workstation
 
@@ -182,42 +81,22 @@ Firewall                          Enable / Pilot
 Application and Device Control    Role dependent / Pilot
 ```
 
-::: {dir="rtl" align="right"}
-برای Serverها Feature Set کامل قابل استفاده است، اما Firewall و
-:::
+<div dir="rtl" align="right">برای Serverها Feature Set کامل قابل استفاده است، اما Firewall و</div>
+<div dir="rtl" align="right">Application Control باید با Policy مخصوص Role و Pilot اجرا شوند.</div>
 
-::: {dir="rtl" align="right"}
-Application Control باید با Policy مخصوص Role و Pilot اجرا شوند.
-:::
+## <span dir="rtl">5. مهاجرت از Kaspersky Endpoint Security</span>
 
-```{=html}
-<h2 dir="rtl" align="right">
-```
-5.  مهاجرت از Kaspersky Endpoint Security
-    ```{=html}
-    </h2>
-    ```
-
-::: {dir="rtl" align="right"}
-سناریوی مورد بررسی:
-:::
+<div dir="rtl" align="right">سناریوی مورد بررسی:</div>
 
 ``` text
 Kaspersky Endpoint Security for Windows 12.4.x
 + Kaspersky Network Agent
 ```
 
-::: {dir="rtl" align="right"}
-اگر Password Protection برای Uninstall فعال است، بهترین روش این است که
-:::
+<div dir="rtl" align="right">اگر Password Protection برای Uninstall فعال است، بهترین روش این است که</div>
+<div dir="rtl" align="right">ابتدا از **Kaspersky Security Center** عملیات حذف انجام شود.</div>
 
-::: {dir="rtl" align="right"}
-ابتدا از **Kaspersky Security Center** عملیات حذف انجام شود.
-:::
-
-::: {dir="rtl" align="right"}
-ترتیب:
-:::
+<div dir="rtl" align="right">ترتیب:</div>
 
 ``` text
 Disable/authorize Kaspersky uninstall
@@ -233,118 +112,64 @@ Uninstall Kaspersky Network Agent
 Deploy SEP
 ```
 
-::: {dir="rtl" align="right"}
-Network Agent را قبل از KES حذف نکنید، زیرا برای اجرای Remote Task به آن
-:::
+<div dir="rtl" align="right">Network Agent را قبل از KES حذف نکنید، زیرا برای اجرای Remote Task به آن</div>
+<div dir="rtl" align="right">نیاز دارید.</div>
 
-::: {dir="rtl" align="right"}
-نیاز دارید.
-:::
+<div dir="rtl" align="right">روی قابلیت Third-Party Removal در SEPM برای عبور از Password Protection</div>
+<div dir="rtl" align="right">حساب نکنید.</div>
 
-::: {dir="rtl" align="right"}
-روی قابلیت Third-Party Removal در SEPM برای عبور از Password Protection
-:::
+## <span dir="rtl">6. Remote Deployment ویندوز</span>
 
-::: {dir="rtl" align="right"}
-حساب نکنید.
-:::
-
-```{=html}
-<h2 dir="rtl" align="right">
-```
-6.  Remote Deployment ویندوز
-    ```{=html}
-    </h2>
-    ```
-
-::: {dir="rtl" align="right"}
-از:
-:::
+<div dir="rtl" align="right">از:</div>
 
 ``` text
 Client Deployment Wizard
 ```
 
-::: {dir="rtl" align="right"}
-استفاده کنید. در شبکه Domain بهتر است به جای وابستگی به `Browse Network`
-:::
+<div dir="rtl" align="right">استفاده کنید. در شبکه Domain بهتر است به جای وابستگی به `Browse Network`</div>
+<div dir="rtl" align="right">از `Search Network`، IP، Range یا Computer Name استفاده شود.</div>
 
-::: {dir="rtl" align="right"}
-از `Search Network`، IP، Range یا Computer Name استفاده شود.
-:::
+### <span dir="rtl">پیش‌نیازهای Remote Push</span>
 
-```{=html}
-<h3 dir="rtl" align="right">
-```
-پیش‌نیازهای Remote Push
-```{=html}
-</h3>
-```
-::: {dir="rtl" align="right"}
-از SEPM Server:
-:::
+<div dir="rtl" align="right">از SEPM Server:</div>
 
 ``` powershell
 Test-NetConnection <CLIENT-IP> -Port 445
 Test-NetConnection <CLIENT-IP> -Port 135
 ```
 
-::: {dir="rtl" align="right"}
-تست Administrative Share:
-:::
+<div dir="rtl" align="right">تست Administrative Share:</div>
 
 ``` cmd
 net use \\<CLIENT-IP>\admin$ /user:<DOMAIN>\<DEPLOY-ACCOUNT> *
 ```
 
-::: {dir="rtl" align="right"}
-تست Remote Service Control:
-:::
+<div dir="rtl" align="right">تست Remote Service Control:</div>
 
 ``` cmd
 sc.exe \\<CLIENT-IP> query RemoteRegistry
 ```
 
-::: {dir="rtl" align="right"}
-تست Remote Registry:
-:::
+<div dir="rtl" align="right">تست Remote Registry:</div>
 
 ``` cmd
 reg query \\<CLIENT-IP>\HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
-```{=html}
-<h3 dir="rtl" align="right">
-```
-پورت‌های مهم
-```{=html}
-</h3>
-```
+### <span dir="rtl">پورت‌های مهم</span>
+
 ``` text
 TCP 445              SMB / ADMIN$
 TCP 135              RPC Endpoint Mapper
 TCP 49152-65535      Dynamic RPC (Windows modern)
 ```
 
-::: {dir="rtl" align="right"}
-Dynamic RPC را برای کل شبکه باز نکنید؛ Source را تا حد امکان به IP سرور
-:::
+<div dir="rtl" align="right">Dynamic RPC را برای کل شبکه باز نکنید؛ Source را تا حد امکان به IP سرور</div>
+<div dir="rtl" align="right">مدیریت/SEPM محدود کنید.</div>
 
-::: {dir="rtl" align="right"}
-مدیریت/SEPM محدود کنید.
-:::
+## <span dir="rtl">7. فعال کردن Remote Registry با GPO</span>
 
-```{=html}
-<h2 dir="rtl" align="right">
-```
-7.  فعال کردن Remote Registry با GPO
-    ```{=html}
-    </h2>
-    ```
-
-::: {dir="rtl" align="right"}
-مسیر:
-:::
+<div dir="rtl" align="right">مسیر:</div>
 
 ``` text
 Computer Configuration
@@ -355,42 +180,28 @@ Computer Configuration
 → Remote Registry
 ```
 
-::: {dir="rtl" align="right"}
-تنظیم:
-:::
+<div dir="rtl" align="right">تنظیم:</div>
 
 ``` text
 Define this policy setting: Enabled
 Startup mode: Automatic
 ```
 
-::: {dir="rtl" align="right"}
-سپس:
-:::
+<div dir="rtl" align="right">سپس:</div>
 
 ``` cmd
 gpupdate /force
 ```
 
-::: {dir="rtl" align="right"}
-و بررسی:
-:::
+<div dir="rtl" align="right">و بررسی:</div>
 
 ``` powershell
 Get-Service RemoteRegistry
 ```
 
-```{=html}
-<h2 dir="rtl" align="right">
-```
-8.  Windows Firewall و GPO
-    ```{=html}
-    </h2>
-    ```
+## <span dir="rtl">8. Windows Firewall و GPO</span>
 
-::: {dir="rtl" align="right"}
-برای خاموش کردن Windows Firewall از GPO:
-:::
+<div dir="rtl" align="right">برای خاموش کردن Windows Firewall از GPO:</div>
 
 ``` text
 Computer Configuration
@@ -401,72 +212,25 @@ Computer Configuration
 → Windows Defender Firewall Properties
 ```
 
-::: {dir="rtl" align="right"}
-برای Profile موردنظر:
-:::
+<div dir="rtl" align="right">برای Profile موردنظر:</div>
 
 ``` text
 Firewall state: Off
 ```
 
-::: {dir="rtl" align="right"}
-بررسی:
-:::
+<div dir="rtl" align="right">بررسی:</div>
 
 ``` powershell
 Get-NetFirewallProfile | Select-Object Name,Enabled
 ```
 
-```{=html}
-<blockquote dir="rtl">
-```
-```{=html}
-<p dir="rtl" align="right">
-```
-روی Production، مخصوصاً Domain Controller، Windows Firewall را فقط
-```{=html}
-</p>
-```
-```{=html}
-</blockquote>
-```
-```{=html}
-<blockquote dir="rtl">
-```
-```{=html}
-<p dir="rtl" align="right">
-```
-زمانی Disable کنید که SEP Firewall نصب، فعال و Ruleهای آن تست شده
-```{=html}
-</p>
-```
-```{=html}
-</blockquote>
-```
-```{=html}
-<blockquote dir="rtl">
-```
-```{=html}
-<p dir="rtl" align="right">
-```
-باشند. خاموش بودن همزمان هر دو Firewall قابل قبول نیست.
-```{=html}
-</p>
-```
-```{=html}
-</blockquote>
-```
-```{=html}
-<h2 dir="rtl" align="right">
-```
-9.  LiveUpdate و دریافت Update توسط SEPM
-    ```{=html}
-    </h2>
-    ```
+> <span dir="rtl">روی Production، مخصوصاً Domain Controller، Windows Firewall را فقط</span>
+> <span dir="rtl">زمانی Disable کنید که SEP Firewall نصب، فعال و Ruleهای آن تست شده</span>
+> <span dir="rtl">باشند. خاموش بودن همزمان هر دو Firewall قابل قبول نیست.</span>
 
-::: {dir="rtl" align="right"}
-در SEPM:
-:::
+## <span dir="rtl">9. LiveUpdate و دریافت Update توسط SEPM</span>
+
+<div dir="rtl" align="right">در SEPM:</div>
 
 ``` text
 Admin
@@ -474,13 +238,9 @@ Admin
 → Local Site
 ```
 
-::: {dir="rtl" align="right"}
-وضعیت Downloadهای LiveUpdate و آخرین Content Revision را بررسی کنید.
-:::
+<div dir="rtl" align="right">وضعیت Downloadهای LiveUpdate و آخرین Content Revision را بررسی کنید.</div>
 
-::: {dir="rtl" align="right"}
-برای اجرای Download دستی:
-:::
+<div dir="rtl" align="right">برای اجرای Download دستی:</div>
 
 ``` text
 Admin
@@ -489,21 +249,13 @@ Admin
 → Download LiveUpdate Content
 ```
 
-::: {dir="rtl" align="right"}
-Interval نمونه برای SEPM:
-:::
+<div dir="rtl" align="right">Interval نمونه برای SEPM:</div>
 
 ``` text
 Every 4 hours
 ```
 
-```{=html}
-<h2 dir="rtl" align="right">
-```
-10. Update گرفتن Clientها از SEPM
-    ```{=html}
-    </h2>
-    ```
+## <span dir="rtl">10. Update گرفتن Clientها از SEPM</span>
 
 Policy:
 
@@ -513,18 +265,14 @@ Policies
 → LiveUpdate Settings
 ```
 
-::: {dir="rtl" align="right"}
-برای Clientهای داخلی:
-:::
+<div dir="rtl" align="right">برای Clientهای داخلی:</div>
 
 ``` text
 Use the default management server    Enabled
 Direct Internet LiveUpdate           Disabled (در صورت عدم نیاز)
 ```
 
-::: {dir="rtl" align="right"}
-ارتباط Client با SEPM را در Client بررسی کنید:
-:::
+<div dir="rtl" align="right">ارتباط Client با SEPM را در Client بررسی کنید:</div>
 
 ``` text
 SEP
@@ -532,27 +280,19 @@ SEP
 → Troubleshooting
 ```
 
-::: {dir="rtl" align="right"}
-Server و Group باید SEPM داخلی را نشان دهند.
-:::
+<div dir="rtl" align="right">Server و Group باید SEPM داخلی را نشان دهند.</div>
 
-::: {dir="rtl" align="right"}
-تست شبکه‌ای رایج:
-:::
+<div dir="rtl" align="right">تست شبکه‌ای رایج:</div>
 
 ``` powershell
 Test-NetConnection <SEPM-IP> -Port 8014
 ```
 
-::: {dir="rtl" align="right"}
-برای اثبات Update شدن، Revision تعریف‌های SEPM و Client را مقایسه کنید.
-:::
+<div dir="rtl" align="right">برای اثبات Update شدن، Revision تعریف‌های SEPM و Client را مقایسه کنید.</div>
 
 ## 11. Communication Settings
 
-::: {dir="rtl" align="right"}
-برای شبکه متوسط:
-:::
+<div dir="rtl" align="right">برای شبکه متوسط:</div>
 
 ``` text
 Mode: Pull
@@ -560,25 +300,12 @@ Heartbeat: 30 minutes
 Download Randomization: Enabled
 ```
 
-::: {dir="rtl" align="right"}
-برای Serverها می‌توان Interval کوتاه‌تری انتخاب کرد، ولی بدون نیاز واقعی
-:::
+<div dir="rtl" align="right">برای Serverها می‌توان Interval کوتاه‌تری انتخاب کرد، ولی بدون نیاز واقعی</div>
+<div dir="rtl" align="right">Load مدیریتی را افزایش ندهید.</div>
 
-::: {dir="rtl" align="right"}
-Load مدیریتی را افزایش ندهید.
-:::
+## <span dir="rtl">12. Password Protection کلاینت</span>
 
-```{=html}
-<h2 dir="rtl" align="right">
-```
-12. Password Protection کلاینت
-    ```{=html}
-    </h2>
-    ```
-
-::: {dir="rtl" align="right"}
-در Group موردنظر:
-:::
+<div dir="rtl" align="right">در Group موردنظر:</div>
 
 ``` text
 Clients
@@ -587,9 +314,7 @@ Clients
 → Password Settings
 ```
 
-::: {dir="rtl" align="right"}
-گزینه‌های مهم:
-:::
+<div dir="rtl" align="right">گزینه‌های مهم:</div>
 
 ``` text
 Require a password to uninstall the client
@@ -598,53 +323,28 @@ Require a password to stop the client service
 Require a password to import/export policy
 ```
 
-::: {dir="rtl" align="right"}
-اگر `Use the default client password` انتخاب شده باشد، رمز Site-level
-:::
-
-::: {dir="rtl" align="right"}
-استفاده می‌شود و معمولاً به صورت Plain Text نمایش داده نمی‌شود. برای کنترل
-:::
-
-::: {dir="rtl" align="right"}
-بهتر می‌توان:
-:::
+<div dir="rtl" align="right">اگر `Use the default client password` انتخاب شده باشد، رمز Site-level</div>
+<div dir="rtl" align="right">استفاده می‌شود و معمولاً به صورت Plain Text نمایش داده نمی‌شود. برای کنترل</div>
+<div dir="rtl" align="right">بهتر می‌توان:</div>
 
 ``` text
 Use a group client password
 ```
 
-::: {dir="rtl" align="right"}
-را انتخاب و Password جدید تعریف کرد.
-:::
+<div dir="rtl" align="right">را انتخاب و Password جدید تعریف کرد.</div>
 
-```{=html}
-<h2 dir="rtl" align="right">
-```
-13. Windows Server قدیمی و Azure Code Signing
-    ```{=html}
-    </h2>
-    ```
+## <span dir="rtl">13. Windows Server قدیمی و Azure Code Signing</span>
 
-::: {dir="rtl" align="right"}
-اگر Installer خطای زیر داد:
-:::
+<div dir="rtl" align="right">اگر Installer خطای زیر داد:</div>
 
 ``` text
 Symantec Endpoint Protection can only be installed on systems with Azure Code Signing support
 ```
 
-::: {dir="rtl" align="right"}
-Windows را Patch کنید. روی Windows Server 2022 با Build بسیار قدیمی،
-:::
+<div dir="rtl" align="right">Windows را Patch کنید. روی Windows Server 2022 با Build بسیار قدیمی،</div>
+<div dir="rtl" align="right">آخرین Cumulative Update را نصب و سیستم را Restart کنید.</div>
 
-::: {dir="rtl" align="right"}
-آخرین Cumulative Update را نصب و سیستم را Restart کنید.
-:::
-
-::: {dir="rtl" align="right"}
-همچنین وجود Root Certificate موردنیاز Microsoft را بررسی کنید:
-:::
+<div dir="rtl" align="right">همچنین وجود Root Certificate موردنیاز Microsoft را بررسی کنید:</div>
 
 ``` powershell
 Get-ChildItem Cert:\LocalMachine\Root |
@@ -653,67 +353,44 @@ Where-Object {
 }
 ```
 
-```{=html}
-<h2 dir="rtl" align="right">
-```
-14. نصب SEP روی Ubuntu 22.04
-    ```{=html}
-    </h2>
-    ```
+## <span dir="rtl">14. نصب SEP روی Ubuntu 22.04</span>
 
-::: {dir="rtl" align="right"}
-برای Package کامل Offline:
-:::
+<div dir="rtl" align="right">برای Package کامل Offline:</div>
 
 ``` bash
 chmod +x LinuxInstaller.ubuntu22
 sudo ./LinuxInstaller.ubuntu22 -- -g
 ```
 
-::: {dir="rtl" align="right"}
-اگر Dependencyها ناقص باشند:
-:::
+<div dir="rtl" align="right">اگر Dependencyها ناقص باشند:</div>
 
 ``` bash
 sudo apt update
 sudo apt install -y at auditd libelf-dev
 ```
 
-::: {dir="rtl" align="right"}
-و دوباره:
-:::
+<div dir="rtl" align="right">و دوباره:</div>
 
 ``` bash
 sudo ./LinuxInstaller.ubuntu22 -- -g
 ```
 
-```{=html}
-<h3 dir="rtl" align="right">
-```
-Secure Boot و MOK
-```{=html}
-</h3>
-```
-::: {dir="rtl" align="right"}
-اگر Secure Boot فعال باشد و Moduleهای SEP لود نشوند:
-:::
+### <span dir="rtl">Secure Boot و MOK</span>
+
+<div dir="rtl" align="right">اگر Secure Boot فعال باشد و Moduleهای SEP لود نشوند:</div>
 
 ``` text
 sisevt    not loaded
 sisap     not loaded
 ```
 
-::: {dir="rtl" align="right"}
-Public Key محصول را به MOK اضافه کنید:
-:::
+<div dir="rtl" align="right">Public Key محصول را به MOK اضافه کنید:</div>
 
 ``` bash
 sudo mokutil --import /usr/lib/symantec/sdcssagent/driver/sis-key.der
 ```
 
-::: {dir="rtl" align="right"}
-قبل از Import می‌توانید Certificate را بررسی کنید:
-:::
+<div dir="rtl" align="right">قبل از Import می‌توانید Certificate را بررسی کنید:</div>
 
 ``` bash
 openssl x509 \
@@ -722,9 +399,7 @@ openssl x509 \
   -noout -subject -issuer -serial -fingerprint -sha256
 ```
 
-::: {dir="rtl" align="right"}
-سپس Reboot کنید و در کنسول UEFI:
-:::
+<div dir="rtl" align="right">سپس Reboot کنید و در کنسول UEFI:</div>
 
 ``` text
 Enroll MOK
@@ -733,43 +408,26 @@ Enroll MOK
 → Reboot
 ```
 
-::: {dir="rtl" align="right"}
-بعد از Boot:
-:::
+<div dir="rtl" align="right">بعد از Boot:</div>
 
 ``` bash
 sudo /usr/lib/symantec/status.sh
 lsmod | grep -E 'sisevt|sisap'
 ```
 
-::: {dir="rtl" align="right"}
-Enroll کردن Public Signing Key معتبر Symantec/Broadcom به MOK، Secure
-:::
+<div dir="rtl" align="right">Enroll کردن Public Signing Key معتبر Symantec/Broadcom به MOK، Secure</div>
+<div dir="rtl" align="right">Boot را Disable نمی‌کند.</div>
 
-::: {dir="rtl" align="right"}
-Boot را Disable نمی‌کند.
-:::
+## <span dir="rtl">15. Group و Policy مخصوص Domain Controller</span>
 
-```{=html}
-<h2 dir="rtl" align="right">
-```
-15. Group و Policy مخصوص Domain Controller
-    ```{=html}
-    </h2>
-    ```
-
-::: {dir="rtl" align="right"}
-ساختار:
-:::
+<div dir="rtl" align="right">ساختار:</div>
 
 ``` text
 Servers
 └── Domain-Controllers
 ```
 
-::: {dir="rtl" align="right"}
-Policyهای پیشنهادی:
-:::
+<div dir="rtl" align="right">Policyهای پیشنهادی:</div>
 
 ``` text
 DC-Malware-Protection
@@ -792,13 +450,8 @@ Daily Active Scan         Off-hours
 Weekly Full Scan          Off-hours
 ```
 
-::: {dir="rtl" align="right"}
-از Exceptionهای گسترده مثل `C:\Windows\` یا `*.db` خودداری کنید.
-:::
-
-::: {dir="rtl" align="right"}
-Exclusion باید Role-specific و حداقلی باشد.
-:::
+<div dir="rtl" align="right">از Exceptionهای گسترده مثل `C:\Windows\` یا `*.db` خودداری کنید.</div>
+<div dir="rtl" align="right">Exclusion باید Role-specific و حداقلی باشد.</div>
 
 ### Intrusion Prevention
 
@@ -815,9 +468,7 @@ Use signature subset for servers                ON
 
 ### Firewall - Protection and Stealth
 
-::: {dir="rtl" align="right"}
-برای DC به صورت Pilot:
-:::
+<div dir="rtl" align="right">برای DC به صورت Pilot:</div>
 
 ``` text
 Enable port scan detection                      ON
@@ -834,113 +485,74 @@ Peer-to-peer authentication                     OFF
 
 ### Windows Integration
 
-::: {dir="rtl" align="right"}
-اگر SEP Firewall جایگزین Windows Firewall شده و Ruleها تست شده‌اند:
-:::
+<div dir="rtl" align="right">اگر SEP Firewall جایگزین Windows Firewall شده و Ruleها تست شده‌اند:</div>
 
 ``` text
 Disable Windows Firewall: Disable Once Only
 ```
 
-::: {dir="rtl" align="right"}
-اگر Windows Firewall با Domain GPO مدیریت می‌شود و Ruleهای مهم دارد،
-:::
-
-::: {dir="rtl" align="right"}
-ابتدا:
-:::
+<div dir="rtl" align="right">اگر Windows Firewall با Domain GPO مدیریت می‌شود و Ruleهای مهم دارد،</div>
+<div dir="rtl" align="right">ابتدا:</div>
 
 ``` text
 No Action
 ```
 
-::: {dir="rtl" align="right"}
-را نگه دارید تا Migration کنترل‌شده انجام شود.
-:::
+<div dir="rtl" align="right">را نگه دارید تا Migration کنترل‌شده انجام شود.</div>
 
-```{=html}
-<h2 dir="rtl" align="right">
-```
-16. Firewall Rule Set پیشنهادی برای DC
-    ```{=html}
-    </h2>
-    ```
+## <span dir="rtl">16. Firewall Rule Set پیشنهادی برای DC</span>
 
-::: {dir="rtl" align="right"}
-اصل مهم: Rule عمومی `Allow all applications / Any / Any` در نهایت باید
-:::
+<div dir="rtl" align="right">اصل مهم: Rule عمومی `Allow all applications / Any / Any` در نهایت باید</div>
+<div dir="rtl" align="right">حذف یا Disable شود، اما فقط بعد از ساخت و تست Allow Ruleهای لازم.</div>
 
-::: {dir="rtl" align="right"}
-حذف یا Disable شود، اما فقط بعد از ساخت و تست Allow Ruleهای لازم.
-:::
+<div dir="rtl" align="right">نمونه:</div>
 
-::: {dir="rtl" align="right"}
-نمونه:
-:::
+  -----------------------------------------------------------------------------
+  Priority       Rule           Source            Service        Action
+  -------------- -------------- ----------------- -------------- --------------
+  1              DC-to-DC       DC IPs            Required AD    Allow
+                                                  traffic        
 
-  -------------------------------------------------------------------------
-  Priority      Rule          Source            Service       Action
-  ------------- ------------- ----------------- ------------- -------------
-  1             DC-to-DC      DC IPs            Required AD   Allow
-                                                traffic       
+  2              DNS            Internal Networks TCP/UDP 53     Allow
 
-  2             DNS           Internal Networks TCP/UDP 53    Allow
+  3              Kerberos       Internal Networks TCP/UDP 88     Allow
 
-  3             Kerberos      Internal Networks TCP/UDP 88    Allow
+  4              NTP            Internal Networks UDP 123        Allow
 
-  4             NTP           Internal Networks UDP 123       Allow
+  5              LDAP           Internal Networks TCP/UDP 389    Allow
 
-  5             LDAP          Internal Networks TCP/UDP 389   Allow
+  6              Kerberos       Internal Networks TCP/UDP 464    Allow
+                 Password                                        
 
-  6             Kerberos      Internal Networks TCP/UDP 464   Allow
-                Password                                      
+  7              SMB            Internal Networks TCP 445        Allow
 
-  7             SMB           Internal Networks TCP 445       Allow
+  8              RPC Endpoint   Internal Networks TCP 135        Allow
+                 Mapper                                          
 
-  8             RPC Endpoint  Internal Networks TCP 135       Allow
-                Mapper                                        
+  9              Dynamic RPC    Internal Networks TCP            Allow
+                                                  49152-65535    
 
-  9             Dynamic RPC   Internal Networks TCP           Allow
-                                                49152-65535   
+  10             Global Catalog Internal Networks TCP 3268/3269  Allow
 
-  10            Global        Internal Networks TCP 3268/3269 Allow
-                Catalog                                       
+  11             LDAPS          Internal Networks TCP 636        Allow
 
-  11            LDAPS         Internal Networks TCP 636       Allow
+  12             SEPM           SEPM IP           Required SEP   Allow
+                 Management                       traffic        
 
-  12            SEPM          SEPM IP           Required SEP  Allow
-                Management                      traffic       
+  13             Admin          Jump/Management   RDP/WinRM as   Allow
+                 Management     hosts             required       
 
-  13            Admin         Jump/Management   RDP/WinRM as  Allow
-                Management    hosts             required      
+  90             Block Other    Any               Any            Block + Log
+                 Inbound                                         
+  -----------------------------------------------------------------------------
 
-  90            Block Other   Any               Any           Block + Log
-                Inbound                                       
-  -------------------------------------------------------------------------
+<div dir="rtl" align="right">برای DC-to-DC می‌توان در فاز اول `Service: Any` را فقط بین IPهای مشخص</div>
+<div dir="rtl" align="right">DCها مجاز کرد و بعداً محدودتر نمود.</div>
 
-::: {dir="rtl" align="right"}
-برای DC-to-DC می‌توان در فاز اول `Service: Any` را فقط بین IPهای مشخص
-:::
+<div dir="rtl" align="right">مواردی مثل UPnP، SSDP، Bonjour، LLMNR، Wireless EAPOL و VPN روی DC در</div>
+<div dir="rtl" align="right">صورت عدم نیاز باید Disable شوند.</div>
 
-::: {dir="rtl" align="right"}
-DCها مجاز کرد و بعداً محدودتر نمود.
-:::
-
-::: {dir="rtl" align="right"}
-مواردی مثل UPnP، SSDP، Bonjour، LLMNR، Wireless EAPOL و VPN روی DC در
-:::
-
-::: {dir="rtl" align="right"}
-صورت عدم نیاز باید Disable شوند.
-:::
-
-```{=html}
-<h2 dir="rtl" align="right">
-```
-17. Rollout امن Firewall روی DC
-    ```{=html}
-    </h2>
-    ```
+## <span dir="rtl">17. Rollout امن Firewall روی DC</span>
 
 ``` text
 Create explicit Allow rules
@@ -964,90 +576,47 @@ Deploy to remaining DCs
 
 ## 18. DLP
 
-::: {dir="rtl" align="right"}
-SEP 14.4 به تنهایی **DLP کامل و Content-aware** نیست.
-:::
+<div dir="rtl" align="right">SEP 14.4 به تنهایی **DLP کامل و Content-aware** نیست.</div>
 
-::: {dir="rtl" align="right"}
-`Application and Device Control` می‌تواند برای کنترل USB، Device و
-:::
+<div dir="rtl" align="right">`Application and Device Control` می‌تواند برای کنترل USB، Device و</div>
+<div dir="rtl" align="right">Application استفاده شود، اما برای Policyهایی مانند تشخیص اطلاعات حساس</div>
+<div dir="rtl" align="right">داخل فایل و جلوگیری از خروج محتوا از USB/Email/Web به محصول **Symantec</div>
+<div dir="rtl" align="right">Data Loss Prevention** یا DLP معادل نیاز است.</div>
 
-::: {dir="rtl" align="right"}
-Application استفاده شود، اما برای Policyهایی مانند تشخیص اطلاعات حساس
-:::
+## <span dir="rtl">19. عیب‌یابی RPC Error 1722</span>
 
-::: {dir="rtl" align="right"}
-داخل فایل و جلوگیری از خروج محتوا از USB/Email/Web به محصول \*\*Symantec
-:::
-
-::: {dir="rtl" align="right"}
-Data Loss Prevention\*\* یا DLP معادل نیاز است.
-:::
-
-```{=html}
-<h2 dir="rtl" align="right">
-```
-19. عیب‌یابی RPC Error 1722
-    ```{=html}
-    </h2>
-    ```
-
-::: {dir="rtl" align="right"}
-خطا:
-:::
+<div dir="rtl" align="right">خطا:</div>
 
 ``` text
 [SC] OpenSCManager FAILED 1722:
 The RPC server is unavailable.
 ```
 
-::: {dir="rtl" align="right"}
-اگر TCP 135، TCP 445 و `ADMIN$` سالم هستند، Dynamic RPC و Windows
-:::
+<div dir="rtl" align="right">اگر TCP 135، TCP 445 و `ADMIN$` سالم هستند، Dynamic RPC و Windows</div>
+<div dir="rtl" align="right">Firewall را بررسی کنید.</div>
 
-::: {dir="rtl" align="right"}
-Firewall را بررسی کنید.
-:::
-
-::: {dir="rtl" align="right"}
-روی Client:
-:::
+<div dir="rtl" align="right">روی Client:</div>
 
 ``` powershell
 Get-Service RpcSs,RpcEptMapper,DcomLaunch,RemoteRegistry
 ```
 
-::: {dir="rtl" align="right"}
-تست از Management Server:
-:::
+<div dir="rtl" align="right">تست از Management Server:</div>
 
 ``` cmd
 sc.exe \\<CLIENT-IP> query RemoteRegistry
 ```
 
-::: {dir="rtl" align="right"}
-پورت‌های Dynamic RPC:
-:::
+<div dir="rtl" align="right">پورت‌های Dynamic RPC:</div>
 
 ``` text
 TCP 49152-65535
 ```
 
-::: {dir="rtl" align="right"}
-Firewall Rule را فقط از Management/SEPM Server به Client Network محدود
-:::
+<div dir="rtl" align="right">Firewall Rule را فقط از Management/SEPM Server به Client Network محدود</div>
+<div dir="rtl" align="right">کنید.</div>
 
-::: {dir="rtl" align="right"}
-کنید.
-:::
-
-```{=html}
-<h2 dir="rtl" align="right">
-```
-20. ترتیب کلی اجرای پروژه
-    ```{=html}
-    </h2>
-    ```
+## <span dir="rtl">20. ترتیب کلی اجرای پروژه</span>
 
 ``` text
 1. Upgrade/Patch SEPM and operating systems
@@ -1070,65 +639,18 @@ Firewall Rule را فقط از Management/SEPM Server به Client Network محد
 18. Configure reporting and alerts
 ```
 
-```{=html}
-<h2 dir="rtl" align="right">
-```
-21. اصول امنیتی نهایی
-    ```{=html}
-    </h2>
-    ```
+## <span dir="rtl">21. اصول امنیتی نهایی</span>
 
-::: {dir="rtl" align="right"}
-• SEP را جایگزین Patch Management، Backup و Privileged Access
-:::
-
-```{=html}
-<div dir="rtl" align="right">
-```
-    Management ندانید.</div>
-
-::: {dir="rtl" align="right"}
-• برای Domain Controllerها Backup قابل بازیابی و ترجیحاً
-:::
-
-```{=html}
-<div dir="rtl" align="right">
-```
-    Immutable/Offline داشته باشید.</div>
-
-::: {dir="rtl" align="right"}
-• دسترسی RDP/WinRM به DC را به Jump Server یا Management Network محدود
-:::
-
-```{=html}
-<div dir="rtl" align="right">
-```
-    کنید.</div>
-
-::: {dir="rtl" align="right"}
-• از ذخیره Passwordهای مدیریتی در Script و GPO به صورت Plain Text
-:::
-
-```{=html}
-<div dir="rtl" align="right">
-```
-    خودداری کنید.</div>
-
-::: {dir="rtl" align="right"}
-• Policyهای Firewall و Application Control را ابتدا Pilot کنید.
-:::
-
-::: {dir="rtl" align="right"}
-• Definition Update و Client Health را از SEPM مانیتور کنید.
-:::
-
-::: {dir="rtl" align="right"}
-• برای مقابله با ransomware، محدودسازی lateral movement به اندازه خود
-:::
-
-```{=html}
-<div dir="rtl" align="right">
-```
-    Antivirus اهمیت دارد.</div>
-
+-   <span dir="rtl">SEP را جایگزین Patch Management، Backup و Privileged Access</span>
+<div dir="rtl" align="right">    Management ندانید.</div>
+-   <span dir="rtl">برای Domain Controllerها Backup قابل بازیابی و ترجیحاً</span>
+<div dir="rtl" align="right">    Immutable/Offline داشته باشید.</div>
+-   <span dir="rtl">دسترسی RDP/WinRM به DC را به Jump Server یا Management Network محدود</span>
+<div dir="rtl" align="right">    کنید.</div>
+-   <span dir="rtl">از ذخیره Passwordهای مدیریتی در Script و GPO به صورت Plain Text</span>
+<div dir="rtl" align="right">    خودداری کنید.</div>
+-   <span dir="rtl">Policyهای Firewall و Application Control را ابتدا Pilot کنید.</span>
+-   <span dir="rtl">Definition Update و Client Health را از SEPM مانیتور کنید.</span>
+-   <span dir="rtl">برای مقابله با ransomware، محدودسازی lateral movement به اندازه خود</span>
+<div dir="rtl" align="right">    Antivirus اهمیت دارد.</div>
 :::
