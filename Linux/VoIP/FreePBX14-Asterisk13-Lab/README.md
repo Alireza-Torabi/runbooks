@@ -38,7 +38,7 @@ systemctl is-active httpd mariadb freepbx
 ss -lunp | grep -E ':(5060|5160)\b'
 ```
 
-The `freepbx` unit in this lab is a custom `oneshot` service and may report `active (exited)` when functioning normally. Verify real application health through the Asterisk CLI and web UI, not service state alone.
+The `freepbx` unit defined in the runbook is a `oneshot` service and may report `active (exited)` when functioning normally. Verify real application health through the Asterisk CLI and web UI, not service state alone.
 
 ### Validation workflow
 
