@@ -1,81 +1,49 @@
-# FreePBX 14 + Asterisk 13.20.0 — Offline Lab Runbooks
+# FreePBX 14.0.16.9 + Asterisk 13.20.0 — CentOS 7.9
 
-[English](#english) | [فارسی](#فارسی)
+Installation runbooks for reproducing a CentOS 7.9 PBX with source-built **Asterisk 13.20.0** and **FreePBX 14.0.16.9**.
 
-## English
+## Installation documentation
 
-### Overview
+- [English — Complete Installation Runbook](FreePBX14_Asterisk13_Runbook_EN.md)
+- [فارسی — راهنمای کامل نصب](FreePBX14_Asterisk13_Runbook_FA.md)
 
-This repository documents the setup, administration, and validation of a **FreePBX 14.0.16.9** laboratory instance running **exactly Asterisk 13.20.0** on **CentOS 7.9**. It is intended for offline compatibility experiments, SIP registration tests, internal calling, and Asterisk Manager Interface (AMI) integration checks.
+## Stack
 
-### Reference stack
-
-| Component | Version / role |
+| Component | Version |
 |---|---|
-| Operating system | CentOS 7.9 |
-| Asterisk | **13.20.0** (source-built) |
-| FreePBX | **14.0.16.9** |
+| Operating system | CentOS 7.9 x86_64 |
+| Asterisk | 13.20.0 |
+| FreePBX | 14.0.16.9 |
 | PHP | 5.6.40 |
-| Apache HTTP Server | 2.4.6 |
-| MariaDB | 5.5.68 |
+| MariaDB | 5.5.x |
+| Apache | 2.4.x |
 | Node.js | 8.17.0 |
-| SIP | PJSIP (typically UDP 5060), Chan_SIP (typically UDP 5160) |
-| AMI | TCP 5038 (restrict access to authorized clients) |
 
-### Documentation
+## Installation sequence
 
-- **[English runbook](FreePBX14_Asterisk13_Runbook_EN.md)** — prerequisites, service management, FreePBX web UI, AMI accounts, SIP extensions, softphone registration, verification, and troubleshooting.
-- **[راهنمای فارسی](FreePBX14_Asterisk13_Runbook_FA.md)** — equivalent Persian operational runbook.
+1. Provision CentOS and required repositories or offline packages.
+2. Install build tools, libraries, Apache, MariaDB and PHP 5.6.
+3. Install Node.js 8.17.0.
+4. Compile Asterisk 13.20.0 and enable the required SIP modules.
+5. Install the pinned FreePBX 14.0.16.9 package.
+6. Configure systemd startup, AMI accounts and SIP extensions.
+7. Verify registration, internal calls and startup after reboot.
 
-### Quick verification (existing installation)
+The runbooks include commands, configuration examples, version checks and troubleshooting procedures.
+
+## Quick verification
 
 ```bash
 asterisk -V
-asterisk -rx "core show uptime"
-asterisk -rx "module show like chan_sip"
-asterisk -rx "module show like chan_pjsip"
+fwconsole -V
+php -v
+node -v
 systemctl is-active httpd mariadb freepbx
-ss -lunp | grep -E ':(5060|5160)\b'
+asterisk -rx 'core show uptime'
 ```
-
-The `freepbx` unit defined in the runbook is a `oneshot` service and may report `active (exited)` when functioning normally. Verify real application health through the Asterisk CLI and web UI, not service state alone.
-
-### Validation workflow
-
-1. Verify software versions, processes, and FreePBX web access.
-2. Configure example AMI read-only and read/write accounts with different credentials and restricted client addresses.
-3. Create test SIP extensions in the FreePBX UI and apply configuration.
-4. Register a SIP softphone such as MicroSIP using the **correct driver and port**.
-5. Verify registration and complete an internal call, including two-way audio and RTP behavior.
-6. Reboot and repeat service, registration, and call checks.
-
----
 
 ## فارسی
 
-### معرفی
+این مخزن شامل دو راهنمای اجرایی برای نصب مجدد CentOS 7.9، کامپایل **Asterisk 13.20.0**، نصب **FreePBX 14.0.16.9**، نصب سرویس‌ها و وابستگی‌ها و تست داخلی‌ها و AMI است.
 
-این مخزن شامل Runbookهای راه‌اندازی، مدیریت و تست یک محیط آزمایشگاهی **FreePBX 14.0.16.9** با نسخه دقیق **Asterisk 13.20.0** بر پایه **CentOS 7.9** است. هدف آن تست سازگاری، رجیستر داخلی‌های SIP، مکالمات داخلی و اتصال AMI در یک محیط آفلاین و ایزوله است.
-
-### مستندات
-
-- **[Runbook فارسی](FreePBX14_Asterisk13_Runbook_FA.md)** — پیش‌نیازها، مدیریت سرویس‌ها، پنل FreePBX، کاربران AMI، داخلی‌های SIP، تست Softphone، عیب‌یابی و چک‌لیست پذیرش.
-- **[English Runbook](FreePBX14_Asterisk13_Runbook_EN.md)** — نسخه انگلیسی راهنمای عملیاتی.
-
-### روند تست
-
-1. بررسی نسخه‌های نرم‌افزار، سرویس‌ها و دسترسی به پنل وب.
-2. تعریف حساب‌های AMI فقط‌خواندنی و مدیریتی با رمزهای مجزا و دسترسی شبکه محدود.
-3. ایجاد داخلی‌های آزمایشی از طریق رابط FreePBX.
-4. اتصال Softphone با انتخاب پورت متناسب با `Chan_SIP` یا `PJSIP`.
-5. تست رجیستر، تماس داخلی، صدای دوطرفه و RTP.
-6. راه‌اندازی مجدد ماشین و تکرار بررسی سلامت سرویس‌ها و تماس.
-
-## Repository files
-
-```text
-README.md
-FreePBX14_Asterisk13_Runbook_FA.md
-FreePBX14_Asterisk13_Runbook_EN.md
-```
-
+برای مراحل اجرایی به [نسخه فارسی](FreePBX14_Asterisk13_Runbook_FA.md) یا [نسخه انگلیسی](FreePBX14_Asterisk13_Runbook_EN.md) مراجعه کنید.
